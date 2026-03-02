@@ -1,0 +1,73 @@
+[
+    {
+        "timestamp": "2024-01-17 02:00:01",
+        "level": "FATAL",
+        "message": "Database connection refused: unable to connect to db-primary:5432 after 3 retries",
+        "statusCode": 500,
+        "method": "GET",
+        "endpoint": "/api/orders",
+        "service": "order-service",
+        "requestId": "req-db-001",
+        "exception": "SQLException",
+        "sqlState": "08001"
+    },
+    {
+        "timestamp": "2024-01-17 02:01:15",
+        "level": "FATAL",
+        "message": "HikariPool-1 connection timeout: pool exhausted, all 30 connections in use",
+        "statusCode": 500,
+        "method": "POST",
+        "endpoint": "/api/users/update",
+        "service": "user-service",
+        "requestId": "req-db-002",
+        "exception": "SQLTimeoutException",
+        "sqlState": "08003"
+    },
+    {
+        "timestamp": "2024-01-17 02:03:45",
+        "level": "ERROR",
+        "message": "SQLSyntaxErrorException: You have an error in your SQL syntax near 'WHER status' at line 3",
+        "statusCode": 500,
+        "method": "GET",
+        "endpoint": "/api/reports/weekly",
+        "service": "reporting-service",
+        "requestId": "req-db-003",
+        "exception": "SQLSyntaxErrorException",
+        "sqlState": "42000"
+    },
+    {
+        "timestamp": "2024-01-17 02:10:22",
+        "level": "ERROR",
+        "message": "DeadlockException: Deadlock found on TX-9901 and TX-9902; rolled back TX-9902",
+        "statusCode": 500,
+        "method": "PUT",
+        "endpoint": "/api/inventory/batch-update",
+        "service": "inventory-service",
+        "requestId": "req-db-004",
+        "exception": "DeadlockException",
+        "sqlState": "40001"
+    },
+    {
+        "timestamp": "2024-01-17 02:15:33",
+        "level": "ERROR",
+        "message": "SQLIntegrityConstraintViolationException: UNIQUE constraint failed on column 'users.email'",
+        "statusCode": 409,
+        "method": "POST",
+        "endpoint": "/api/users/batch-import",
+        "service": "user-service",
+        "requestId": "req-db-005",
+        "exception": "SQLIntegrityConstraintViolationException"
+    },
+    {
+        "timestamp": "2024-01-17 02:20:50",
+        "level": "FATAL",
+        "message": "Access denied for user 'app_user'@'10.0.0.5': incorrect database password",
+        "statusCode": 500,
+        "method": "GET",
+        "endpoint": "/api/analytics",
+        "service": "analytics-service",
+        "requestId": "req-db-006",
+        "exception": "SQLException",
+        "sqlState": "28000"
+    }
+]
